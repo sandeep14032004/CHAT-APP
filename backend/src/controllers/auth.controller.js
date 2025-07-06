@@ -160,6 +160,9 @@ export const updateProfile = async (req, res) => {
     const userId = req.user._id;
     if (!userId)
       return res.status(500).json({ message: "Internal server error" });
+    if (!req.user || !req.user._id) {
+      return res.status(401).json({ message: "Unauthorized" });
+    }
 
     const uploadResponse = await cloudinary.uploader.upload(profilePic);
     const updatedUser = await User.findByIdAndUpdate(
