@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* html,
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body {
+    @apply bg-white text-gray-800;
+}
+
+html.dark body {
+    @apply bg-[#0f172a] text-gray-100;
+} */
