@@ -27,7 +27,7 @@ const SettingsPage = () => {
       <div className="min-h-screen px-4 sm:px-6 md:px-10 pt-16 sm:pt-20 max-w-6xl mx-auto">
         <div className="space-y-10">
           {/* 🔙 Back Button */}
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-0 mb-6">
+          <div className="flex justify-between items-center mb-6">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.96 }}

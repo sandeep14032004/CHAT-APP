@@ -59,7 +59,7 @@ const ProfilePage = () => {
       <div className=" mx-auto px-2 py-8 max-w-6xl">
         <motion.div className="bg-base-200 backdrop-blur-xl border border-primary/10 rounded-3xl p-10 shadow-lg space-y-10">
           {/* 🔙 Back Button */}
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-0 mb-6">
+          <div className="flex justify-between items-center mb-4">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.96 }}

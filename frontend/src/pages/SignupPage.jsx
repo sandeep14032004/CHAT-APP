@@ -60,16 +60,17 @@ const SignUpPage = () => {
   };
 
   return (
-    <div className="min-h-screen grid lg:grid-cols-2 bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-black text-white overflow-hidden ">
+    <div className="grid lg:grid-cols-2 bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-black text-white lg:h-screen overflow-hidden">
       {/* Left Side - Form */}
       <motion.div
         initial={{ opacity: 0, x: -40 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8 }}
-        className="flex items-center justify-center px-6 py-12"
+        className="flex items-center justify-center px-4 sm:px-6 lg:px-10"
       >
-        <div className="w-full max-w-md p-8 rounded-3xl bg-white/5 backdrop-blur-xl border border-cyan-500/10 shadow-[0_8px_32px_0_rgba(0,210,255,0.37)] transition-all duration-300">
-          <div className="text-center mb-8">
+        <div className="w-full max-w-md py-10 px-6 sm:px-8 rounded-3xl bg-white/5 backdrop-blur-xl border border-cyan-500/10 shadow-[0_8px_32px_0_rgba(0,210,255,0.37)] transition-all duration-300">
+          {/* Header */}
+          <div className="text-center mb-6">
             <div className="flex flex-col items-center gap-3 group">
               <motion.div
                 whileHover={{ scale: 1.1 }}
@@ -77,16 +78,17 @@ const SignUpPage = () => {
               >
                 <MessageSquare className="size-6 text-cyan-400" />
               </motion.div>
-              <h1 className="text-3xl font-bold tracking-wider text-cyan-300">
+              <h1 className="text-2xl sm:text-3xl font-bold tracking-wide text-cyan-300">
                 Create Account
               </h1>
-              <p className="text-white/50 text-sm">
+              <p className="text-sm text-white/50">
                 Join us and experience the future ✨
               </p>
             </div>
           </div>
 
-          <form onSubmit={handleSubmit} className="space-y-6">
+          {/* Form */}
+          <form onSubmit={handleSubmit} className="space-y-5 text-sm">
             {/* Full Name */}
             <div className="form-control">
               <label className="label mb-1">
@@ -96,7 +98,7 @@ const SignUpPage = () => {
                 <User className="absolute left-3 top-3 text-white/40 size-5" />
                 <input
                   type="text"
-                  className="input input-bordered w-full pl-10 bg-transparent border border-cyan-400/30 focus:border-cyan-400 text-white placeholder-white/50 transition-all duration-200"
+                  className="input w-full pl-10 py-2 bg-transparent border border-cyan-400/30 focus:border-cyan-400 text-white placeholder-white/50 text-sm"
                   placeholder="Enter Your Full Name"
                   value={formData.fullName}
                   onChange={(e) =>
@@ -115,7 +117,7 @@ const SignUpPage = () => {
                 <Mail className="absolute left-3 top-3 text-white/40 size-5" />
                 <input
                   type="email"
-                  className="input input-bordered w-full pl-10 bg-transparent border border-cyan-400/30 focus:border-cyan-400 text-white placeholder-white/50 transition-all duration-200"
+                  className="input w-full pl-10 py-2 bg-transparent border border-cyan-400/30 focus:border-cyan-400 text-white placeholder-white/50 text-sm"
                   placeholder="Enter your E-mail"
                   value={formData.email}
                   onChange={(e) =>
@@ -134,7 +136,7 @@ const SignUpPage = () => {
                 <Lock className="absolute left-3 top-3 text-white/40 size-5" />
                 <input
                   type={showPassword ? "text" : "password"}
-                  className="input input-bordered w-full pl-10 pr-10 bg-transparent border border-cyan-400/30 focus:border-cyan-400 text-white placeholder-white/50 transition-all duration-200"
+                  className="input w-full pl-10 pr-10 py-2 bg-transparent border border-cyan-400/30 focus:border-cyan-400 text-white placeholder-white/50 text-sm"
                   placeholder="Enter Your Password"
                   value={formData.password}
                   onChange={(e) =>
@@ -143,7 +145,7 @@ const SignUpPage = () => {
                 />
                 <button
                   type="button"
-                  className="absolute right-3 top-3 text-white/40 hover:text-cyan-300 transition-all"
+                  className="absolute right-3 top-3 text-white/40 hover:text-cyan-300"
                   onClick={() => setShowPassword(!showPassword)}
                 >
                   {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
@@ -155,7 +157,7 @@ const SignUpPage = () => {
             <motion.button
               whileTap={{ scale: 0.98 }}
               type="submit"
-              className="btn bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-600 text-white font-semibold w-full shadow-md transition-all duration-200"
+              className="btn bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-600 text-white font-semibold w-full text-base py-2 shadow-md"
               disabled={isSigningUp}
             >
               {isSigningUp ? (
@@ -169,6 +171,7 @@ const SignUpPage = () => {
             </motion.button>
           </form>
 
+          {/* Sign in link */}
           <div className="text-center mt-6 text-white/60 text-sm">
             Already have an account?{" "}
             <Link to="/login" className="text-cyan-300 hover:underline">
