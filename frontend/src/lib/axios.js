@@ -1,6 +1,6 @@
 import axios from "axios";
 
 export const axiosInstance = axios.create({
-  baseURL: "http://localhost:5001/api",
+  baseURL: "https://nexchat-backend-ski0.onrender.com/api",
   withCredentials: true,
 });
